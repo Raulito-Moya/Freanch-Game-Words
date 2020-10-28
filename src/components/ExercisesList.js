@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-
+import yogaexercise from '../images/yoga1.png'
 const ExerciseList=(props)=>(
      
     <div>
@@ -10,7 +10,8 @@ const ExerciseList=(props)=>(
           <Card 
           key={exercise.id}
           title={exercise.title}
-          descripcion={exercise.descripcion}
+          descripcion={exercise.description}
+          img={yogaexercise}
            />
         )
      })}
