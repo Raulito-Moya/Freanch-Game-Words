@@ -1,32 +1,17 @@
-import React from 'react';
-import {BrowserRouter,Route,Switch} from 'react-router-dom'  //se importa el Route
-import ExercisesContainer from '../pages/ExercisesContainer'
-import ExercisesNewContainer from '../pages/ExercisesNewContainer'
-import NotFound from '../pages/NotFound'
+import React from 'react'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import Presentacion from '../pages/Presentacion'
+import NotFound from '../pages/NotFound.js'
+import Jugar from '../pages/Jugar.js'
 
-const App=()=>
-     (
-        <BrowserRouter>
-        <Switch>
-           <Route exact path="/exercise" component={ExercisesContainer}/>
-           <Route exact path="/exercise/new" component={ExercisesNewContainer}/>
-           <Route component={NotFound}/>
-        </Switch>
-         
-        </BrowserRouter>
-     )
-
-/*function App(){
-     return (
-         <BrowserRouter>
-         <Switch>
-            <Route exact path="/exercise" component={Exercises}/>
-            <Route exact path="/exercise/new" component={ExercisesNew}/>
-            <Route component={NotFound}/>
-         </Switch>
-          
-         </BrowserRouter>
-     )
-}*/
+const App=()=>(
+    <BrowserRouter>
+    <Switch>
+       <Route exact path="/presentacion" component={Presentacion}/> 
+       <Route exact path="/presentacion/aprenderpalabras" component={Jugar}/>
+       <Route component={NotFound}/>
+    </Switch>
+    </BrowserRouter>
+)
 
 export default App

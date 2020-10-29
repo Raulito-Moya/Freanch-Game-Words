@@ -1,0 +1,41 @@
+*{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.general{
+  margin-left: 300px;
+    width: 900px;
+}
+
+
+
+.imagen{
+   margin-top: 20px;
+}
+
+.descripcion{
+ 
+}
+
+h1{
+    
+    color: rgb(147, 101, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h3{
+    margin-top: -10px;
+}
+
+
+
+.generalmenu{
+    margin-left: 300px;
+    margin-top: 100px;
+      width: 900px;
+  }
+
+  .enlaces{
+       font-size: 1.4em;
+  }
