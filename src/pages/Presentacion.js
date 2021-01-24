@@ -6,7 +6,7 @@ const Presentacion=()=>(
    
     <div>
        <Info />
-       <Menu rute2='presentacion/aprenderpalabras' />  
+       <Menu rute2='presentacion/aprenderpalabras' rute3='presentacion/historia' />  
     </div>
   
 )

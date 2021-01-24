@@ -5,8 +5,7 @@ import {Link} from 'react-router-dom'
 
 const Booton=()=>( //codigo mas moderno
     <div >
-    <Link to='/exercise/new' className='Button' > <img src={boton}/>
-    </Link>
+    <Link to='/exercise/new' className='Button' > <img src={boton}/> </Link>
  </div>
 
 )

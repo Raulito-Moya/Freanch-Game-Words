@@ -1,0 +1,11 @@
+.gameList{
+    color: rgb(19, 10, 53);
+    font-size: 1.9em;
+   
+}
+.juego{
+     background: -webkit-linear-gradient(left,rgb(67, 67, 250),rgb(248, 11, 11),white);
+     width: 100%;
+     padding-top: 1000px;
+}
+

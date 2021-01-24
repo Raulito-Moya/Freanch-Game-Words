@@ -1,16 +1,17 @@
 import React from 'react'
+import Juego from '../components/Juego'
+import '../components/styles/juego.css'
+
+ const Jugar =()=>{
+ 
 
 
-class Jugar extends React.Component{
+         return <div className='juego'>
+                 <Juego/>
+                </div>
 
 
-    render(){ 
-       
-      return   <div>
-            <h1>Narrarremos la historia de Francia</h1>
-        </div>
-        
-    }
 }
+
 
 export default Jugar

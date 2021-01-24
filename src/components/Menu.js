@@ -26,10 +26,10 @@ return  <div className='generalmenu'>
        <h1>Elija lo que quiera aprender  </h1>
        <div className='descripcion'>
            <ul>
-             <Link to='' className='enlaces' /*onFocus={this.setState({frase:'que hay'})}*/ >{this.state.frase}</Link>
+             <Link to='presentacion/aprenderpalabras' className='enlaces' /*onFocus={this.setState({frase:'que hay'})}*/ >{this.state.frase}</Link>
            </ul>
            <ul>
-               <Link to="presentacion/aprenderpalabras"  className='enlaces'>Historia de Francia</Link>
+               <Link to="presentacion/historia"  className='enlaces'>Historia de Francia</Link>
            </ul>
        </div>
     </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Aprende Frances diariamente con solo 5 palabras al día</h1>
+    <div id="contenido">
+    </div>
+     
+     <h3>Averigua su significado :)</h3>
+    <script>
+        const frances=['Bonjour','ca va','merci','au revoir','bonne tard ','bonne nuit','a demain','s il vous plait','la vouture','la maison','enfant','le homme','la famme','le garcon']
+          const verbosDelGrupoE='amiti,bonheur,comme,courir,marcher,sauter,regarder,respirer,entendre,sauter,nager, manger, boire, cuisiner, utiliser, dormir, saluer, descendre, monter' //los mezcle arriba
+          const verbosDelGrupoI='Grosir,reflechir,choisir,definir,sortir,rire,*Je recois tu recois il obtient nous obtenons ils obtiennent, *je dor tu  dors il dort nous durmons ils durment'
+           const sustantivosdeUsofrecuente=''
+           const adjetivosdeUSofrecuente=''
+           
+
+  const arraydeVerbosE = verbosDelGrupoE.split(',')    //usar split para llevar el texto a array en el caso de que se quiera poner muchas palabras en un array  
+  const arraydeVerbosI=verbosDelGrupoI.split(',')
+
+     const sumadePalabras=frances+arraydeVerbosE+arraydeVerbosI
+      const arrayTotal=sumadePalabras.split(',')
+
+    console.log(arrayTotal)
+    console.log(arrayTotal.length)
+
+
+        const listadePalabras=arrayTotal.sort(function(){  //va a tirar las palabras regadas
+            return Math.random()-0.5
+        });
+        console.log(listadePalabras)
+
+        
+          //Voy a imprimir las palabras de forma elegante utilizando javaScript
+          
+          const contenido=document.getElementById('contenido');
+           const lista=document.createElement('ul');
+          contenido.appendChild(lista);
+          
+ 
+           //imprimo las listas en una columna 
+       const valores=`<li>${listadePalabras[0] }</li>  <br/> <li>${listadePalabras[1] } </li> <br/> <li>${listadePalabras[2] } </li> <br/>  <li>${listadePalabras[3] }</li>  <br/>  <li>${listadePalabras[4] }</li>  <br/> `;
+
+        lista.innerHTML=valores;
+ 
+     
+
+    
+    </script>
+</body>
+</html>

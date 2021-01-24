@@ -1,0 +1,6 @@
+amistad, felicidadad,gustar,correr,caminar,saltar,mirar,respirar,oir,saltar,nadar,comer,beber,cocinar,usar,dormir,saludar,bajar,subir
+
+amiti¨¦,bonheur,comme,courir,marcher, sauter, regarder,respirer,entendre,sauter,nager, manger, boire, cuisiner, utiliser, dormir, saluer, descendre, monter,/parteger,vivre,saluer
+
+
+Grosir,reflechir,choisir,definir,sortir,rire,Je recois tu recois il obtient nous obtenons ils obtiennent*, je dor tu  dors il dort nous durmons ils durment*,
