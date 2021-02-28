@@ -4,9 +4,7 @@ import '../components/styles/juego.css'
 
  const Jugar =()=>{
  
-
-
-         return <div className='juego'>
+         return <div >
                  <Juego/>
                 </div>
 

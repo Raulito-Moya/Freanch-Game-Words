@@ -1,20 +1,28 @@
 import React from 'react'
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import {BrowserRouter,Route,Switch ,Redirect} from 'react-router-dom'
 import Presentacion from '../pages/Presentacion'
 import NotFound from '../pages/NotFound.js'
 import Jugar from '../pages/Jugar.js'
 import Historia from '../pages/historia.js'
-
+import {NavBar} from './NavBar'
 
 const App=()=>(
-    <BrowserRouter>
+    
+
+    <>
+   
+    <BrowserRouter> 
+    <NavBar />
+
     <Switch>
-       <Route exact path="/presentacion" component={Presentacion}/> 
+       <Route exact path="/" component={Presentacion}/> 
        <Route exact path="/presentacion/aprenderpalabras" component={Jugar}/>
        <Route exact path="/presentacion/historia" component={Historia}/>
-       <Route exact component={NotFound}/>
+       <Redirect exact component={NotFound}/>
     </Switch>
     </BrowserRouter>
+    
+    </>
 )
 
 export default App

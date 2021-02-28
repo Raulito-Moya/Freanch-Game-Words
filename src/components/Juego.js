@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import './styles/juego.css'
 
 const Juego = () =>{
@@ -38,6 +37,7 @@ const Juego = () =>{
           const valores=`<li>${listadePalabras[0] }</li>  <br/> <li>${listadePalabras[1] } </li> <br/> <li>${listadePalabras[2] } </li> <br/>  <li>${listadePalabras[3] }</li>  <br/>  <li>${listadePalabras[3] }</li>  <br/> `;
 
          function recarga(){
+             
          return  window.location.reload()
          /*  let intervalo=  window.setTimeout(function(){document.location.reload(true)},1000)
        return  clearTimeout(intervalo)*/
@@ -46,7 +46,7 @@ const Juego = () =>{
 
 
          return <div>
-             <div>
+             <div className='juego'>
                   <ul className='gameList'>
                      <li>{listadePalabras[0]}</li>
                      <li>{listadePalabras[1] }</li>
