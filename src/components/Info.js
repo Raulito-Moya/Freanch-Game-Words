@@ -3,7 +3,8 @@ import './styles/estilos.css'
 import bandera from '../images/France.png'
 
 
-const Info=()=>(
+const Info=()=>{ 
+    return( 
  <div className='general'>
      <div className='imagen'> 
          <img src={bandera} alt="Bandera"/>
@@ -14,6 +15,6 @@ const Info=()=>(
        </div>
  </div>
 )
-
+}
 
 export default Info

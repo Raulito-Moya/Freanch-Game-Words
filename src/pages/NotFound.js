@@ -1,7 +1,6 @@
 import React from 'react'
 
-const NotFound=()=>(
+ export const NotFound=()=>(
     <h1>Not found</h1>
 )
 
-export default NotFound

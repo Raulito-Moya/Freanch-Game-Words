@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import App from './components/App'
+import {AppRoute} from './components/Routes/AppRoute'
 
 
 const container=document.getElementById("app")
 
-ReactDOM.render(<App/>,container);
+ReactDOM.render(<AppRoute/>,container);
 
 

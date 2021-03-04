@@ -11,11 +11,11 @@ export const NavBar = () => {
       <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top"/>
        Presentacion
     </Link>
-    <Link class="navbar-brand" to="/presentacion/aprenderpalabras">
+    <Link class="navbar-brand" to="/presentation/learnwords">
       <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top"/>
        Juego
     </Link>
-    <Link class="navbar-brand" to="/presentacion/historia">
+    <Link class="navbar-brand" to="/presentation/history">
       <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top"/>
       Historia de Francia
     </Link>

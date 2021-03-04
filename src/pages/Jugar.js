@@ -1,10 +1,12 @@
 import React from 'react'
 import Juego from '../components/Juego'
+import {FormGame} from '../components/FormGame'
 import '../components/styles/juego.css'
 
- const Jugar =()=>{
+ export const Jugar =()=>{
  
          return <div >
+                 <FormGame/>
                  <Juego/>
                 </div>
 
@@ -12,4 +14,4 @@ import '../components/styles/juego.css'
 }
 
 
-export default Jugar
+

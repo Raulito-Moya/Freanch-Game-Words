@@ -8,19 +8,20 @@ const Menu = () => {
 
 
 
-return <div className='generalmenu'>
-   
+return (
+
+<div className='generalmenu'>
   <h1>Elija lo que quiera aprender  </h1>
   <div className='descripcion'>
     <ul>
-      <Link to='presentacion/aprenderpalabras' className='enlaces'>Aprenda Palabras en Frances</Link>
+      <Link  to='presentation/learnwords' className='enlaces'>Aprenda Palabras en Frances</Link>
     </ul>
     <ul>
-       <Link to="presentacion/historia"  className='enlaces'>Historia de Francia</Link>
+       <Link to='presentation/history'  className='enlaces'>Historia de Francia</Link>
     </ul>
   </div>
   </div>
-
+)
 }
 
 export default Menu
