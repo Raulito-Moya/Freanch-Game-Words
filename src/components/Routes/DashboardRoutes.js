@@ -9,12 +9,12 @@ import {Historia} from '../../pages/historia'
 import {NotFound} from '../../pages/NotFound'
 import { NavBar } from './NavBar'
 
-export const DashboardRoutes = () => {
+export const DashboardRoutes = ({history}) => {
     
    return(
      <>  
      
-      <NavBar /> 
+      <NavBar history={history}/> 
     <div className="container">
      <Switch>
        <Route exact path="/presentation" component={Presentacion}/> 

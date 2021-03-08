@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import {AppRoute} from './components/Routes/AppRoute'
+import { FreanchAPP } from './FreanchAPP';
 
 
 const container=document.getElementById("app")
 
-ReactDOM.render(<AppRoute/>,container);
+ReactDOM.render(<FreanchAPP/>,container);
 
 
