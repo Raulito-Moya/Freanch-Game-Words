@@ -13,7 +13,7 @@ console.log(rest)
         <Route {...rest}
            component={(props)=>
                           (islogged) ? ( <Component {...props}/>)
-                           : (<Redirect to="/login"/>) }/>
+                           : (<Redirect to="/loginIntro" />) }/>
 
 
     )

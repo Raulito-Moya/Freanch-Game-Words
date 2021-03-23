@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './styles/juego.css'
+
 
 const Juego = () =>{
 

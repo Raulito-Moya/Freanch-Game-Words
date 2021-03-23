@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/estilos.css'
+
 import bandera from '../images/France.png'
 
 

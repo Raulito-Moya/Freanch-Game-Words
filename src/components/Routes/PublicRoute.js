@@ -7,7 +7,7 @@ export const PublicRoute = ({
           
               }) =>{
     return(
-       <Route component={(props) => (islogged===false) ? (<Component {...props}/>) : <Redirect to="/"/> }/>
+       <Route component={(props) => (!islogged) ? (<Component {...props}/>) : <Redirect to="/"/> }/>
     )
 
 }

@@ -1,33 +1,23 @@
 import React, { useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { AuthContext } from '../auth/AuthContext'
-import { types } from '../types/types'
+import { authlogout } from '../../actions/auth'
 
-export const NavBar = ({history}) => {
 
- const {user,dispatch} = useContext(AuthContext)
+export const NavBar = () => {
 
-   const handleClik = () => {
+ const dispatch = useDispatch();
+ const {userName} = useSelector(state => state.auth)
+   
+  
+   const handleClick = () => {
     
-     const action = {
-       type:types.logout,
-       payload:{
-         name:'Raul'
-       }
-     }  
-
-     dispatch(action)
- 
-      history.replace('/login')
+     dispatch(authlogout())        
       
-    
    }
 
    
-
     return(  
-     <div>
-       
         <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
             <Link class="navbar-brand" to="/">
@@ -44,16 +34,17 @@ export const NavBar = ({history}) => {
             </Link>
 
              <div className="navbar-brand ">
-              <p className="nav-item nav-link text-info "> {user.name}</p>
-              <button type="click" className='btn btn-primary ' onClick={handleClik}>Logout</button>
-             
+              <p className="nav-item nav-link text-info "> {userName}</p>
+              <button 
+                   type="click" 
+                   className='btn btn-primary' 
+                   onClick={handleClick}>
+                   Logout
+              </button>
             </div>
-
           </div>
-
-          
         </nav>
-    </div>
+    
 
 )
 

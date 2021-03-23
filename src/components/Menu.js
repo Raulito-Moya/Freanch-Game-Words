@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './styles/estilos.css'
+
 import {Link} from 'react-router-dom' //la etiqueta link para darle ruta
 
 

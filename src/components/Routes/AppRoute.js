@@ -1,35 +1,31 @@
-import React,{useContext} from 'react'
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import {BrowserRouter as Router,
-        Route,
-        Switch ,
-        Redirect } from 'react-router-dom'
-import { AuthContext } from '../auth/AuthContext'
-import { LoginScreen } from '../LoginScreen'
-import {NavBar} from './NavBar'
-import {DashboardRoutes} from './DashboardRoutes'
-import { PrivateRoute } from './PrivateRoute'
-import { PublicRoute } from './PublicRoute'
+        Switch  } from 'react-router-dom';
+import { LoginPresentation } from '../Login/LoginPresentation';
+import { LoginScreen } from '../Login/LoginScreen';
+import {DashboardRoutes} from './DashboardRoutes';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 
 export const AppRoute = ()=>{ 
 
-    const {user} = useContext(AuthContext)
-
-    const islogged = user.logged
-  //  console.log(islogged)
+    const {auth} = useSelector(state => state.auth)
+    
+ //console.log(state);
+    const islogged = auth
 
 
     return(
     <Router>  
-      <div>
-     
       <Switch> 
-       <PublicRoute exact path="/login" component={LoginScreen}  islogged={islogged}/> 
-       <PrivateRoute path="/" component={DashboardRoutes}  islogged={islogged}/>
-      </Switch>
     
-      </div>  
-    </Router>
+       <PublicRoute  path="/loginIntro" component={LoginPresentation}  islogged={islogged}/> 
+       <PrivateRoute  path="/" component={DashboardRoutes}  islogged={islogged}/>  
+      
+      </Switch>
+     </Router>
     )
 
 }

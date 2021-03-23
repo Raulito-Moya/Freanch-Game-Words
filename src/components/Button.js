@@ -1,6 +1,6 @@
 import React from 'react'
 import boton from '../images/flecha.ico'
-import './styles/Button.css'
+
 import {Link} from 'react-router-dom'
 
 const Booton=()=>( //codigo mas moderno
