@@ -1,6 +1,6 @@
 import React from 'react'
 
-import bandera from '../images/France.png'
+import bandera from '../../images/France.png' //las imagenes tiene que venir por otra via
 
 
 const Info=()=>{ 

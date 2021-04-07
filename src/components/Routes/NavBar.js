@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { authlogout } from '../../actions/auth'
+import { authlogout, StartLogout } from '../../actions/auth'
 
 
 export const NavBar = () => {
@@ -12,7 +12,7 @@ export const NavBar = () => {
   
    const handleClick = () => {
     
-     dispatch(authlogout())        
+     dispatch(StartLogout())        
       
    }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Info from '../components/Info'
-import Menu from '../components/Menu'
+import Info from '../components/Presentacion/Info'
+import Menu from '../components/Presentacion/Menu'
 import {Container,Row, Col} from 'react-bootstrap'
 
 export const Presentacion=()=>{ 

@@ -15,7 +15,7 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+ // firebase.analytics();  esto no se para que es tengo que investigar
 
   const db = firebase.firestore();
   const googleAuthProvider = new firebase.auth.GoogleAuthProvider();

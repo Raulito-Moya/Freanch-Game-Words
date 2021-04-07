@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from "react-router-dom"
-import { auth } from '../../actions/auth'
+import { auth, startLoginWithEmailAndPassword } from '../../actions/auth'
 import { useForm } from '../../Hooks/useForm/useForm'
 
 
@@ -12,40 +12,34 @@ import { useForm } from '../../Hooks/useForm/useForm'
 
    const dispatch = useDispatch();
   
-   const[{loginValue,passwordValue},handleInputChange] = useForm({
-       loginValue:'',
-       passwordValue:''
+   const[{name,email,password},handleInputChange] = useForm({
+       name: '',
+       email: '',
+       password: ''
    })
 
 
 
-
 const handleLogin = (e) => {
- // e.preventDefault()
+  e.preventDefault()
    
-  dispatch(auth(loginValue, passwordValue))
+  dispatch(startLoginWithEmailAndPassword(email, password))
 
-  /* if(user.name === loginValue){ //debe registrarse
-       
-     // history.replace('/')
-    }*/
-       
-    
 }
 
-
+//Me quede modificado el LoginScreen para hacer match con la cuenta en firebase
 return(
     <div>
         <h1>Login Screen</h1>
         <form onSubmit={handleLogin} >
           <div className="mb-3">
-            <label className="form-label">Usuario</label>
+            <label className="form-label">Email</label>
             <input 
-              placeholder="escriba su usuario" 
+              placeholder="escriba su email" 
               className="form-control" 
-              type="click" 
-              name="loginValue" 
-              value={loginValue} 
+              type="text" 
+              name="email" 
+              value={email}
               onChange={handleInputChange}/>
           </div>
           <div className="mb-3">
@@ -53,9 +47,9 @@ return(
              <input 
               placeholder="escriba su contrasena" 
               className="form-control" 
-              type="click" 
-              name="passwordValue" 
-              value={passwordValue}
+              type="text" 
+              name="password" 
+              value={password}
               onChange={handleInputChange}
               />
           </div>
