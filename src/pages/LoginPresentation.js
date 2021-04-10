@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link,Route,Switch} from 'react-router-dom'
-import { LoginScreen } from './LoginScreen';
-import { SignUpLogin } from './SignUpLogin';
+import { LoginScreen } from '../components/Login/LoginScreen';
+import { SignUpLogin } from '../components/Login/SignUpLogin';
 
 export const LoginPresentation = ({location}) => {
 
@@ -15,7 +15,7 @@ return(
        </header>
        
        {
-       (pathname != '/loginIntro/login' && pathname != '/loginIntro/register') 
+       (pathname !== '/loginIntro/login' && pathname !== '/loginIntro/register') 
          &&
        (<form className="row">
           <Link className="btn btn-primary" to='/loginIntro/login'>Sign In</Link>

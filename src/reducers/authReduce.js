@@ -2,7 +2,7 @@ import { types } from "../types/types"
 
 
 
-const initialState ={
+const initialState = {
     auth:null
   
 }
@@ -15,9 +15,10 @@ export const authReducer = (state = initialState, action)=> {
               ...initialState,
               auth:true,
               userName: action.payload.userName,
-              email: action.payload.email 
+              uid: action.payload.uid,
+              email: action.payload.email
           }
-
+          
           case types.logout:
               return {
                   ...initialState,

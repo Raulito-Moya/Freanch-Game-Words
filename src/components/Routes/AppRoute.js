@@ -6,7 +6,7 @@ import {firebase} from '../../firebase/firebase-config'
 
 import { auth } from '../../actions/auth';
 import { finishLoading, setLoading } from '../../actions/ui';
-import { LoginPresentation } from '../Login/LoginPresentation';
+import { LoginPresentation } from '../../pages/LoginPresentation';
 import { LoginScreen } from '../Login/LoginScreen';
 import {DashboardRoutes} from './DashboardRoutes';
 import { PrivateRoute } from './PrivateRoute';
@@ -22,7 +22,7 @@ export const AppRoute = ()=>{
     const { loading } = useSelector(state => state.ui)
 
 
-    const [islogged,setisLogged] = useState(false)
+    const [ islogged, setisLogged ] = useState(false)
      
     //console.log(state);
       // const islogged = auth
@@ -34,13 +34,13 @@ export const AppRoute = ()=>{
         
           if(user?.uid){ 
              setisLogged(true)
-            dispatch(auth(user.displayName, user.email))
+            dispatch(auth(user.displayName,user.uid, user.email))
            }else{
              setisLogged(false)
            }
-        
+         dispatch(finishLoading())
        })
-     
+      
      
     },[])
 

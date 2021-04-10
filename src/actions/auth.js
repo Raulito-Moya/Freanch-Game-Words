@@ -40,8 +40,8 @@ export const startLoginWithEmailAndPassword = (email,password) => {
        firebase.auth().signInWithEmailAndPassword(email,password)
                .then(({user}) =>{
                   console.log(user);
-                
-                dispatch(auth(user?.displayName, user?.email))   
+                 
+                dispatch(auth(user?.displayName, user?.uid, user?.email ))   
                 dispatch(finishLoading())
                })
                 .catch(e => console.log(e))
@@ -62,11 +62,12 @@ export const StartLogout = () => {
 }
 
 
-export const auth = (userName,email) =>  ({
+export const auth = (userName, uid, email) =>  ({
    
    type: types.login,
     payload:{
        userName,
+       uid,
        email
     }
      

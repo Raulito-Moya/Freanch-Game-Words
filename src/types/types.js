@@ -6,5 +6,10 @@
     
     setError: "[UI] setError",
     setLoading: "[UI] setLoading ",
-    finishLogin: "[UI] setfinishLogin"
+    finishLogin: "[UI] setfinishLogin",
+
+    activeWords: "[Words] setActiveWords",
+    activeSortWords: "[Words] getSortWords",
+    writeWords: "[Words] writeWords"
+
  } 
