@@ -1,5 +1,7 @@
+
 import { db } from "../firebase/firebase-config"
 import { types } from "../types/types"
+
 
 export const getFetchWords = () => {
    return (dispatch) => {
@@ -21,7 +23,7 @@ export const getFetchWords = () => {
     
 } 
 
-export const postFetchWords = ( wordType, word ) => {
+/*export const postFetchWords = ( wordType, word ) => {
   return (dispatch) => {
 
     
@@ -29,6 +31,31 @@ export const postFetchWords = ( wordType, word ) => {
     db.ref(wordType).set(word)
 
   }
+
+}*/
+
+
+export const updateFetchWords = (path, wordsWriten) => {
+   return (dispatch, getState) => {
+
+   // var newPostKey = db.ref().child('ejemplo').push().key;  //esto lo que hace es generarme una key que no se para que es
+      const {words} = getState().words
+      const ej = words[path]
+     const postData = 'hihi' // todo: poner las palabras actualesmas las nuevas 
+      console.log(words[path]);
+     var updates = {};
+     updates[`/Words/${path}`] =  words[path] + ',' + wordsWriten;
+       
+     dispatch(updatedWords(updates))
+
+     return db.ref().update(updates)
+                .catch( (e)=> { console.log(e);} );
+
+
+   }
+    
+ 
+
 
 }
 
@@ -51,9 +78,9 @@ export const getSortWords = (words) => ({
 })
 
 
-export const writeWords = (words) => ({
+export const updatedWords = (words) => ({
   
-  type: types.writeWords,
+  type: types.wordsUpdated,
   payload: words
 
 })

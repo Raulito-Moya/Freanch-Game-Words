@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {getFetchWords, getWords, getSortWords} from '../../actions/words'
+import {getFetchWords, getSortWords} from '../../actions/words'
+
 
 
  const PopularWords = 'Bonjour,ca va,merci,au revoir,bonne tard ,bonne nuit,a demain,s il vous plait,la vouture,la maison,enfant,le homme,la famme,le garcon '
@@ -19,41 +20,43 @@ const Juego = () => {
     const { words } = useSelector(state => state.words);
     const { wordsSort } = useSelector(state => state.words);
        
+     
+     
      let wordList = []
        
-       useEffect(()=> {
+       useEffect(() => {
          console.log('palabras');
 
          dispatch(getFetchWords())
 
        },[])
 
-
+        // todo: falta popularwrods y hacer u n efect para las palabras actualizadas
+      const popularWords = words.popularWords;   
       const verbsGroupE = words.verbsGroupE;
       const verbsGroupI = words.verbsGroupI;
       const usefulNouns = words.usefulNouns;
       const usefulAdjectives = words.usefulAdjectives;
 
-      const verbsEArray = verbsGroupE.split(',')  
-      const verbsIArray = verbsGroupI.split(',')
-      const nounsArray = usefulNouns.split(',')
-      const adjectivesArray = usefulAdjectives.split(',')
-    
-       
-      const wordsSum = verbsEArray + verbsIArray + nounsArray + adjectivesArray //se suman todas las palabras de la base de datos
-     
+      const popularWordsArray = popularWords.split(',');
+      const verbsGroupEArray = verbsGroupE.split(',');
+      const verbsGroupIArray = verbsGroupI.split(',')
+      const usefulNounsArray = usefulNouns.split(',')
+      const usefulAdjectivesArray = usefulAdjectives.split(',')
 
+      const wordsSum = popularWordsArray + "," + verbsGroupEArray + "," + verbsGroupIArray + "," + usefulNounsArray + "," + usefulAdjectivesArray //se suman todas las palabras de la base de datos
       const arrayTotal = wordsSum.split(',')
-   
+      
+
        const SortingWords = () => {
           
          wordList = arrayTotal.sort( function(){  //va a tirar las palabras regadas
               return Math.random() - 0.5
           });
-          console.log(wordList)
+         
          dispatch(getSortWords(wordList))
 
-       }
+       };
         
  
 
@@ -64,7 +67,7 @@ const Juego = () => {
          }
        
         
-        if(wordsSort.length === 0) {
+        if (wordsSort.length === 0) {
              return(
                <div className='juego'>
                  <h1>No hay palabras por favor recargue</h1>

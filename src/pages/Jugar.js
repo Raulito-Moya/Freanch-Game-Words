@@ -14,9 +14,11 @@ import { AddWords } from '../components/Juego/AddWords'
          return (
              <div >
                 <FormGame/>
-                { uid === 'ChWCDYaPX5f2cP8oou0MnTymE1C3' && <AddWords/> }
+                { uid === 'ChWCDYaPX5f2cP8oou0MnTymE1C3' 
+                   && 
+                  <AddWords/> 
+                }
                 <Juego/>
-              
              </div>
              )
 

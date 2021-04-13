@@ -10,6 +10,6 @@
 
     activeWords: "[Words] setActiveWords",
     activeSortWords: "[Words] getSortWords",
-    writeWords: "[Words] writeWords"
+    wordsUpdated: "[Words] wordsUpdated"
 
  } 

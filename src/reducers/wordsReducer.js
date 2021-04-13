@@ -5,12 +5,14 @@ import { types } from "../types/types"
 
 const initState ={
   words: {
+    popularWords: 'ejemplo',
     verbsGroupE: 'ejemplo',
     verbsGroupI: 'ejemplo',
     usefulNouns: 'ejemplo',
     usefulAdjectives: 'ejemplo'
   },
-  wordsSort: []
+  wordsSort: [],
+  wordsUpdated: []
 } 
 
 
@@ -29,7 +31,11 @@ export const wordsReducer = (state = initState, action ) => {
            wordsSort: action.payload
          }    
            
-           
+       case types.wordsUpdated:
+         return {
+           ...state,
+           wordsUpdated: action.payload
+         }    
    
        default:
           return state

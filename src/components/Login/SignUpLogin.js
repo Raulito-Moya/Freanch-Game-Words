@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { useForm } from '../../Hooks/useForm/useForm';
 import { StartRegisterWithEmailandPassword } from '../../actions/auth';
 import validator from 'validator'
 import { setError } from '../../actions/ui';
+import { useForm } from '../../Hooks/useForm';
 
 export const SignUpLogin = () =>{
 
