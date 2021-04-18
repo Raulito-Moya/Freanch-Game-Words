@@ -7,20 +7,31 @@ import { AddWords } from '../components/Juego/AddWords'
 
 
 
- export const Jugar =()=>{
+ export const Jugar = () => {
        
   const { uid } = useSelector(state => state.auth)
 
          return (
-             <div >
-                <FormGame/>
-                { uid === 'ChWCDYaPX5f2cP8oou0MnTymE1C3' 
-                   && 
-                  <AddWords/> 
-                }
-                <Juego/>
+             <div className="container-fluid">
+                <div className = 'row'>
+                     <FormGame/>
+                </div>
+                 
+                 
+                <div className = 'row mt-3 mb-3'>
+                  { uid === 'ChWCDYaPX5f2cP8oou0MnTymE1C3' 
+                     && 
+                    <AddWords/> 
+                  }
+                </div>
+                
+                <div className='row'>
+                   <Juego/>
+                 </div>
+               
+               
              </div>
-             )
+          )
 
 
 }

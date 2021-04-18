@@ -39,9 +39,11 @@ const firebaseConfig = {
    }
  
  
- 
- 
 
+  
+  
+  
+  
 
  //actualizar en la database
 
@@ -67,7 +69,7 @@ const firebaseConfig = {
 
 
 
-  export{
+  export {
       db,
       googleAuthProvider,
       firebase

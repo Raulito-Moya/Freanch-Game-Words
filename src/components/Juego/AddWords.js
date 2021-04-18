@@ -10,7 +10,6 @@ import { useForm } from '../../Hooks/useForm'
 export const AddWords = () => {
        
       const dispatch = useDispatch();
-      const {words} = useSelector(state => state.words)
      const[ {wordsWriten}, handleInputChange ] = useForm({
        wordsWriten: ''
      })
@@ -25,25 +24,30 @@ export const AddWords = () => {
      },[send])
 
     const handleValue = (e) => {
-       
         setPath(e.target.value)
     }
-     console.log(path);  
- 
-
-     
+  
     const handleSend = (e) => {
        e.preventDefault()
     
 
-       if( !wordsWriten.includes(",") ){
+       if(  wordsWriten.length <= 2 ){
+       
          Swal.fire({
+          icon: 'error',
+          title: 'Opss',
+          text: 'Please write some words'
+         })
+     
+      } 
+      else if( !wordsWriten.includes(",") ) {
+        Swal.fire({
           icon: 'error',
           title: 'Opss',
           text: 'Please write commas ( , )'
          })
-        console.log('no hay comas'); //aqui voya a mostrar una alerte con SweetAlert
-      }else{
+      }
+      else{
         Swal.fire({
           title: 'Hi Raul :). Do you want to save these words?',
           showDenyButton: true,
@@ -71,27 +75,28 @@ export const AddWords = () => {
   return(
   
     <div>
-      <form onSubmit={handleSend}>
+      <form onSubmit={handleSend} >
         <select 
-          name="path"  
-          class="form-select" 
-          aria-label="Default select example" 
-          onChange={handleValue} 
+          name = "path"  
+          class = "form-select" 
+          aria-label = "Default select example" 
+          onChange = { handleValue } 
           >
-          <option  name="path" selected> popularWords </option>
-          <option name="path" > usefulAdjectives </option>
-          <option name="path" > usefulNouns </option>
-          <option name="path" > verbsGroupE </option>
-          <option name="path" > verbsGroupI </option>
+          <option name ="path" selected> popularWords </option>
+          <option name ="path" > usefulAdjectives </option>
+          <option name ="path" > usefulNouns </option>
+          <option name ="path" > verbsGroupE </option>
+          <option name ="path" > verbsGroupI </option>
         </select>
           <input 
-           type="text" 
-           name="wordsWriten" 
-           value={wordsWriten}
-           onChange={ handleInputChange }
-           placeholder="words"
+           type ='text'
+           name ='wordsWriten' 
+           value = { wordsWriten }
+           onChange = { handleInputChange }
+           placeholder ='words'
+           className= 'form-control'
            />
-          <button type="submit" >Send</button>
+          <button type='submit' className='btn btn-outline-info'>Send</button>
       </form>      
     </div>
 

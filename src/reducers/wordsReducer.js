@@ -12,7 +12,9 @@ const initState ={
     usefulAdjectives: 'ejemplo'
   },
   wordsSort: [],
-  wordsUpdated: []
+  wordsUpdated: [],
+  wordTranslated: 'palabra traducida',
+  
 } 
 
 
@@ -28,7 +30,8 @@ export const wordsReducer = (state = initState, action ) => {
        case types.activeSortWords:
          return {
            ...state,
-           wordsSort: action.payload
+           wordsSort: action.payload,
+           wordTranslated: 'palabra traducida'
          }    
            
        case types.wordsUpdated:
@@ -36,6 +39,15 @@ export const wordsReducer = (state = initState, action ) => {
            ...state,
            wordsUpdated: action.payload
          }    
+
+
+       case types.translatedWord:
+         return {
+           ...state,
+           wordTranslated: action.payload
+         }  
+
+       
    
        default:
           return state

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2'
 
-import {getFetchWords, getSortWords} from '../../actions/words'
+import {getFetchWords, getSortWords } from '../../actions/words'
+import { WordSelected } from './WordSelected'
 
 
 
@@ -17,21 +19,23 @@ import {getFetchWords, getSortWords} from '../../actions/words'
 const Juego = () => {
 
     const dispatch = useDispatch();
-    const { words } = useSelector(state => state.words);
+    const { words, wordTranslated } = useSelector(state => state.words);
     const { wordsSort } = useSelector(state => state.words);
-       
+    const [learned, setLearn] = useState(false)  
      
-     
+    
      let wordList = []
        
        useEffect(() => {
          console.log('palabras');
 
          dispatch(getFetchWords())
-
+          
        },[])
 
-        // todo: falta popularwrods y hacer u n efect para las palabras actualizadas
+       
+
+      
       const popularWords = words.popularWords;   
       const verbsGroupE = words.verbsGroupE;
       const verbsGroupI = words.verbsGroupI;
@@ -58,15 +62,40 @@ const Juego = () => {
 
        };
         
- 
+
 
          const recarga = (e) => {
             e.preventDefault()
             
               SortingWords() 
+              setLearn(false)
          }
        
+         const handleLearn = () => {
+
+          Swal.fire({
+            title: 'Are you sure you learned these words',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: `Learned`,
+            denyButtonText: `still not`,
+          }).then( (result) => {
+             if (result.isConfirmed) {
+               
+               Swal.fire('Learned! ', '', 'success')
+               //setTimeout(()=>{
+                 setLearn(true)
+              // },2000)
+             
+            } else if (result.isDenied) {
+              Swal.fire('OK ... continue', '', 'info')
+              setLearn(false)
+            }
+          })
+
+         } 
         
+         
         if (wordsSort.length === 0) {
              return(
                <div className='juego'>
@@ -75,19 +104,25 @@ const Juego = () => {
                </div>  
               )
          } 
-
+    
 
          return (
              <div className='juego'>
-                  <ul className='gameList'>
-                     <li>{ wordsSort[0] }</li>
-                     <li>{ wordsSort[1] }</li>
-                     <li>{ wordsSort[2] }</li>
-                     <li>{ wordsSort[3] }</li>
-                     <li>{ wordsSort[4] }</li>
-                 </ul>
+                  <div className='gameList'>
+                    { 
+                      wordsSort.map(w => (wordsSort.indexOf(w) <= 4  )  
+                        && 
+                     <WordSelected key={w} word={w} /> )
+                    
+                    }
+                  {
+                    wordTranslated !== 'palabra traducida' && wordTranslated
+                  } 
+                 </div>
+            
+                {learned && <h1 className='animate__animated animate__heartBeat'>aprendido</h1>}
               <button type="click" className="btn btn-primary" onClick={recarga}> refrescar</button>
-              <button type="click" className="btn btn-dark">Aprendido</button>
+              <button type="click" className="btn btn-dark" onClick={handleLearn}> Aprendido </button>
              </div>
          )
 

@@ -10,6 +10,7 @@
 
     activeWords: "[Words] setActiveWords",
     activeSortWords: "[Words] getSortWords",
-    wordsUpdated: "[Words] wordsUpdated"
-
+    wordsUpdated: "[Words] wordsUpdated",
+    translatedWord: "[Words Translate] wordsTranslated",
+    
  } 

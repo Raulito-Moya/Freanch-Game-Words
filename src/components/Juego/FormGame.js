@@ -17,9 +17,9 @@ export const FormGame = () => {
  return(
     <div>
       <form onSubmit={handleSearch}>
-          <h1>Buscador de Palabras</h1>
-          <input type="text" name="palabra" value=""/>
-          <button type="click">Buscar</button>
+          <label>Buscador de Palabras</label>
+          <input type="text" className="form-control" name="palabra" value=""/>
+          <button type="buttom" className="btn btn-outline-info">Buscar</button>
       </form> 
       
     </div>
